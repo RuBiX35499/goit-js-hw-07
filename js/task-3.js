@@ -1,8 +1,12 @@
 const usernameInput = document.querySelector("#name-input");
 let username = document.querySelector("#name-output");
 
-username.addEventListener("input", onHeaderChange);
+usernameInput.addEventListener("input", onHeaderChange);
 
 function onHeaderChange() {
-  username.textContent = usernameInput.value;
+  if (usernameInput.value.trim() === "") {
+    username.textContent = "Anonymous";
+  } else {
+    username.textContent = usernameInput.value;
+  }
 }
